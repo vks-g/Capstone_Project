@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+    .glitch-portfolio {
+        background-color: rgba(8, 15, 23, 1);
+        display: flex;
+        min-height: 900px;
+        flex-direction: column;
+        overflow: hidden;
+        font-family: Plus Jakarta Sans, sans-serif;
+        justify-content: start;
+        padding: 0 48px;
+    }
+
+    .nav-links a{
+        color: white;
+        text-decoration: none;
+
+    }
+    
+    .header {
+        background-color: rgba(8, 15, 23, 1);
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 40px 100px;
+        color: rgba(214, 221, 230, 1);
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 16px 0;
+    }
+    
+    .logo {
+        align-self: stretch;
+        min-height: 48px;
+        font-size: 42px;
+        font-weight: 700;
+        letter-spacing: -1.68px;
+        line-height: 1;
+        margin: auto 0;
+    }
+    
+    .nav-links {
+        align-self: stretch;
+        display: flex;
+        min-width: 240px;
+        align-items: start;
+        gap: 32px;
+        font-size: 28px;
+        font-weight: 500;
+        letter-spacing: -0.28px;
+        line-height: 1;
+        justify-content: start;
+        flex-wrap: wrap;
+        margin: auto 0;
+    }
+    
+    .main-wrapper {
+        display: flex;
+        width: 100%;
+        align-items: start;
+        font-weight: 500;
+        justify-content: start;
+        padding: 48px 0;
+    }
+    
+    .content {
+        display: flex;
+        min-width: 240px;
+        width: 100%;
+        flex-direction: column;
+        justify-content: start;
+        flex: 1;
+    }
+    
+    .hero {
+        background-color: rgba(8, 15, 23, 1);
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        font-size: 120px;
+        color: rgba(214, 221, 230, 1);
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: -2.4px;
+        line-height: 120px;
+        justify-content: start;
+        padding: 96px 0;
+    }
+    
+    .hero-title {
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        margin: 0;
+    }
+    
+    .hero-image {
+        aspect-ratio: 2;
+        object-fit: contain;
+        width: 100%;
+        border-radius: 36px;
+        margin-top: 48px;
+    }
+    
+    .projects-grid {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: start;
+    }
+    
+    .project-row {
+        background-color: rgba(8, 15, 23, 1);
+        display: flex;
+        width: 100%;
+        align-items: start;
+        gap: 40px 48px;
+        overflow: hidden;
+        justify-content: start;
+        flex-wrap: wrap;
+        padding: 48px 0;
+    }
+    
+    .project-card {
+        display: flex;
+        min-width: 240px;
+        min-height: 333px;
+        flex-direction: column;
+        justify-content: start;
+        flex: 1;
+        flex-basis: 0%;
+    }
+    
+    .project-image {
+        aspect-ratio: 1.5;
+        object-fit: contain;
+        width: 100%;
+        flex: 1;
+    }
+    
+    .project-info {
+        display: flex;
+        margin-top: 8px;
+        width: 100%;
+        flex-direction: column;
+        justify-content: start;
+    }
+    
+    .project-title {
+        color: rgba(214, 221, 230, 1);
+        font-size: 20px;
+        line-height: 1.2;
+    }
+    
+    .project-type {
+        color: rgba(214, 221, 230, 0.62);
+        font-size: 17px;
+        line-height: 1;
+    }
+    
+    .about {
+        background-color: rgba(8, 15, 23, 1);
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        font-size: 48px;
+        color: rgba(214, 221, 230, 1);
+        letter-spacing: -0.48px;
+        line-height: 52px;
+        justify-content: start;
+        flex-wrap: wrap;
+        padding: 96px 0;
+    }
+    
+    .about-text {
+        align-self: start;
+        flex: 1;
+        flex-basis: 0%;
+    }
+    
+    .contact {
+        background-color: rgba(8, 15, 23, 1);
+        display: flex;
+        min-height: 700px;
+        width: 100%;
+        padding-top: 200px;
+        flex-direction: column;
+        align-items: center;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1;
+        justify-content: start;
+    }
+    
+    .contact-form {
+        display: flex;
+        width: 400px;
+        max-width: 100%;
+        flex-direction: column;
+        justify-content: start;
+    }
+    
+    .contact-title {
+        width: 100%;
+        font-size: 28px;
+        color: rgba(214, 221, 230, 1);
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: -0.28px;
+        line-height: 1;
+        margin: 0;
+    }
+    
+    .input-group {
+        align-self: center;
+        display: flex;
+        margin-top: 32px;
+        width: 100%;
+        max-width: 600px;
+        align-items: center;
+        gap: 12px;
+        font-size: 20px;
+        color: rgba(214, 221, 230, 0.4);
+        font-weight: 500;
+        line-height: 1.2;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .input-field {
+        align-self: stretch;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.04);
+        min-height: 64px;
+        width: 56px;
+        margin: auto 0;
+        padding: 20px 16px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .submit-btn {
+        align-self: stretch;
+        border-radius: 8px;
+        background-color: rgba(167, 238, 67, 1);
+        margin-top: 32px;
+        width: 100%;
+        color: rgba(0, 10, 20, 1);
+        padding: 8px 16px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .skip-link {
+        color: rgba(193, 241, 126, 1);
+        align-self: center;
+        margin-top: 32px;
+        text-decoration: none;
+    }
+    
+    .footer {
+        background-color: rgba(8, 15, 23, 1);
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: start;
+        padding: 96px 0 24px;
+    }
+    
+    .footer-content {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 40px 100px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    .copyright {
+        align-self: stretch;
+        min-width: 240px;
+        font-size: 28px;
+        color: rgba(214, 221, 230, 0.62);
+        font-weight: 500;
+        letter-spacing: -0.28px;
+        line-height: 1;
+        margin: auto 0;
+    }
+    
+    .follow-btn {
+        align-self: stretch;
+        border-radius: 8px;
+        font-size: 20px;
+        color: rgba(214, 221, 230, 1);
+        font-weight: 600;
+        line-height: 1.2;
+        margin: auto 0;
+        padding: 12px 24px;
+        border: 2px solid rgba(214, 221, 230, 0.2);
+        background: none;
+        cursor: pointer;
+    }
+    
+    .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+    
+    @media (max-width: 991px) {
+      .glitch-portfolio {
+        padding: 0 20px;
+      }
+      
+      .header,
+      .nav-links,
+      .main-wrapper,
+      .content,
+      .hero,
+      .projects-grid,
+      .project-row,
+      .about,
+      .contact,
+      .footer {
+        max-width: 100%;
+      }
+      
+      .hero-title {
+        font-size: 40px;
+        line-height: 44px;
+      }
+      
+      .hero-image {
+        margin-top: 40px;
+      }
+      
+      .contact {
+        padding-top: 100px;
+      }
+      
+      .input-group {
+        max-width: 100%;
+      }
+      
+      .follow-btn {
+        padding: 0 20px;
+      }
+    }
+    </style>
+</head>
+<body>
+  <section class="glitch-portfolio">
+    <header class="header">
+      <div class="logo">Glitchy</div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+  
+    <div class="main-wrapper">
+      <main class="content">
+        <section class="hero">
+          <h1 class="hero-title">Welcome to My Glitchy World</h1>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/950050e4e80a09caf20fdcc1ff7397ff2de999f460f114ba54e5e1b723343f2a?placeholderIfAbsent=true&apiKey=f9bde1c47eb34da98964f7c4d40c1821" alt="Glitchy digital art hero image" class="hero-image" />
+        </section>
+  
+        <section class="projects-grid">
+          <div class="project-row">
+            <article class="project-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2108a21b607f4b5daea0fa3c6821c892a0cd21d5b188efe99686ad5ba3327c95?placeholderIfAbsent=true&apiKey=f9bde1c47eb34da98964f7c4d40c1821" alt="Web design project preview" class="project-image" />
+              <div class="project-info">
+                <h3 class="project-title">Project A</h3>
+                <p class="project-type">Web Design</p>
+              </div>
+            </article>
+            
+            <article class="project-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/418bae294aec514b7b38f007a31cd51bc67272c7f55d50a0f222edc7dac5a0d7?placeholderIfAbsent=true&apiKey=f9bde1c47eb34da98964f7c4d40c1821" alt="Graphic design project preview" class="project-image" />
+              <div class="project-info">
+                <h3 class="project-title">Project B</h3>
+                <p class="project-type">Graphic Design</p>
+              </div>
+            </article>
+            
+            <article class="project-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3b45d01e54bfc95e993fa699e07916716fb616f7114ee456400138187bba4d82?placeholderIfAbsent=true&apiKey=f9bde1c47eb34da98964f7c4d40c1821" alt="Animation project preview" class="project-image" />
+              <div class="project-info">
+                <h3 class="project-title">Project C</h3>
+                <p class="project-type">Animation</p>
+              </div>
+            </article>
+          </div>
+  
+          <div class="project-row">
+            <article class="project-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5e93b9d57033f99144ec021482929dff444367582935fc747413bf2dcc9b1908?placeholderIfAbsent=true&apiKey=f9bde1c47eb34da98964f7c4d40c1821" alt="App development project preview" class="project-image" />
+              <div class="project-info">
+                <h3 class="project-title">Project D</h3>
+                <p class="project-type">App Development</p>
+              </div>
+            </article>
+            
+            <article class="project-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/43da67e7d3af4e64ceba3d35d48a799e36eb0000f6d2f71033316248ed19bd5d?placeholderIfAbsent=true&apiKey=f9bde1c47eb34da98964f7c4d40c1821" alt="Photography project preview" class="project-image" />
+              <div class="project-info">
+                <h3 class="project-title">Project E</h3>
+                <p class="project-type">Photography</p>
+              </div>
+            </article>
+            
+            <article class="project-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b30680bbc959eb12db461db1b0e52d78e7dc574f34d6bb5471638a7b9cb0b25c?placeholderIfAbsent=true&apiKey=f9bde1c47eb34da98964f7c4d40c1821" alt="Illustration project preview" class="project-image" />
+              <div class="project-info">
+                <h3 class="project-title">Project F</h3>
+                <p class="project-type">Illustration</p>
+              </div>
+            </article>
+          </div>
+  
+          <div class="project-row">
+            <article class="project-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/625bd5b762b8e66a99a659509da445dbb29e886d2d565dca81605fc1565563a9?placeholderIfAbsent=true&apiKey=f9bde1c47eb34da98964f7c4d40c1821" alt="UI/UX design project preview" class="project-image" />
+              <div class="project-info">
+                <h3 class="project-title">Project G</h3>
+                <p class="project-type">UI/UX Design</p>
+              </div>
+            </article>
+            
+            <article class="project-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e81793b809c998fd2c83a5d83b6bed2a08a48af7ece0471608abe529686cc20d?placeholderIfAbsent=true&apiKey=f9bde1c47eb34da98964f7c4d40c1821" alt="Branding project preview" class="project-image" />
+              <div class="project-info">
+                <h3 class="project-title">Project H</h3>
+                <p class="project-type">Branding</p>
+              </div>
+            </article>
+            
+            <article class="project-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/50147d83bb85ea38409f2fdc6b61da679e7299524a13882de9898aa487a9273f?placeholderIfAbsent=true&apiKey=f9bde1c47eb34da98964f7c4d40c1821" alt="Video editing project preview" class="project-image" />
+              <div class="project-info">
+                <h3 class="project-title">Project I</h3>
+                <p class="project-type">Video Editing</p>
+              </div>
+            </article>
+          </div>
+        </section>
+  
+        <section class="about">
+          <p class="about-text">I am a digital artist who loves to create visually disruptive and glitchy designs. My work explores the beauty in imperfections and the art of digital distortion.</p>
+        </section>
+  
+        <section class="contact">
+          <form class="contact-form">
+            <h2 class="contact-title">Contact Me</h2>
+            <div class="input-group">
+              <label for="code1" class="visually-hidden">Code digit 1</label>
+              <input type="text" id="code1" class="input-field" maxlength="1" aria-label="Code digit 1" />
+              <label for="code2" class="visually-hidden">Code digit 2</label>
+              <input type="text" id="code2" class="input-field" maxlength="1" aria-label="Code digit 2" />
+              <label for="code3" class="visually-hidden">Code digit 3</label>
+              <input type="text" id="code3" class="input-field" maxlength="1" aria-label="Code digit 3" />
+              <label for="code4" class="visually-hidden">Code digit 4</label>
+              <input type="text" id="code4" class="input-field" maxlength="1" aria-label="Code digit 4" />
+              <label for="code5" class="visually-hidden">Code digit 5</label>
+              <input type="text" id="code5" class="input-field" maxlength="1" aria-label="Code digit 5" />
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+            <a href="#skip" class="skip-link">Skip</a>
+          </form>
+        </section>
+      </main>
+    </div>
+  
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="copyright">2023 Glitchy Portfolio</p>
+        <button class="follow-btn">Follow Me</button>
+      </div>
+    </footer>
+  </section>
+</body>
+</html>
+
